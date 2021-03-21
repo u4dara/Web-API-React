@@ -30,21 +30,21 @@ class Avenger extends Component {
     return <p>No movies available</p>;
     return this.state.movies.map((movie, index) => (<li key={index}>{movie}</li>))
   }
-  likeAvenger() {
-    console.log("Like the avenger");
+  likeAvenger = () => {
+    this.setState({likeCount: this.state.likeCount + 1});
   }
   render() {
     return (
       <div className="card" style={{width: "18rem"}}>
         <img src="https://p1.hiclipart.com/preview/878/208/854/avengers-endgame-2019-avengers-logo-avengers-logo-png-clipart.jpg" className="card-img-top" alt="..."></img>
         <div className="card-body">
-          <h5 className="card-title">Card title</h5>
+          <h5 className="card-title">Avenger Name</h5>
           <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
           </p>
           <ul>
             {this.showMovies()}
           </ul>
-          <button className="btn btn-primary" onClick={this.likeAvenger()}>Like</button>
+          <button className="btn btn-primary" onClick={this.likeAvenger}>Like <span className="badge bg-secondary">{this.state.likeCount}</span> </button>
         </div>
       </div>
     );

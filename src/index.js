@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Avenger from "./components/avenger"
+import AvengersList from "./components/avengersList"
 
-ReactDOM.render(<Avenger />, document.getElementById("root"));
+ReactDOM.render(<AvengersList />, document.getElementById("root"));
